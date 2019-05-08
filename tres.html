@@ -42,18 +42,19 @@
           nombre:"Francisca Kegevic",
           ingreso:2017,
           trabajos:[
-          {titulo:"silla",imagen:"https://home.ripley.cl/store/Attachment/WOP/D367/2000368847000/2000368847000_2.jpg"},
-          {titulo:"mesa",imagen:"https://home.ripley.cl/store/Attachment/WOP/D359/2000361041702/2000361041702_2.jpg"},
-          {titulo:"velador",imagen:"http://www.decorador.cl/wp-content/uploads/2017/11/Velador-Alanya-Bohemio-Chic2.jpg"}
+          {titulo:"Silla",imagen:"https://home.ripley.cl/store/Attachment/WOP/D367/2000368847000/2000368847000_2.jpg"},
+          {titulo:"Mesa",imagen:"https://home.ripley.cl/store/Attachment/WOP/D359/2000361041702/2000361041702_2.jpg"},
+          {titulo:"Velador",imagen:"http://www.decorador.cl/wp-content/uploads/2017/11/Velador-Alanya-Bohemio-Chic2.jpg"}
         ]
       }
       ]
 
         $.each(curso, function(i, integrante) {
-            $("#cuestiones").append("<h2>" + integrante.nombre + "</h2>");
+            $("#cuestiones").append("<h2 class='mt-5 bg-rosado text-white'>" + integrante.nombre + "</h2>");
 
           $.each(integrante.trabajos, function(i, trabajo) {
-              $("#cuestiones").append("<h5>" + trabajo.titulo + "</h5>").append("<img src='" + trabajo.imagen + "'>");
+              $("#cuestiones").append("<h5 class='border-top my-2 pl-2'>" + trabajo.titulo + "</h5>").append("<img src='"
+              + trabajo.imagen + "'class='img-fluid'>");
           });
 
         });
