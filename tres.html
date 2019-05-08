@@ -12,7 +12,7 @@
       <div class="row py-5">
         <div class="col-11 col-sm-10 mx-auto">
           <h1>Hello, world!</h1>
-          <div id= "cuestiones">
+          <div id="cuestiones"></div>
         </div>
       </div>
     </div>
@@ -29,26 +29,35 @@
     <!-- después de ir por las bibliotecas, puedes aprovecharlas-->
     <script>
 
-      var a = ["Hola mundo!","Adios mundo cruel!"]
-      var b = {saludo: "hola mundo", despedida:"Bye"}
-      var c =
-      [
-    {saludo:"hola mundo", chroma:"red"},
-    {saludo:"hola", chroma:"blue"},
-    {saludo:"h...", chroma:"green"}
-      ]
       var curso = [
-        {nombre:"Alexa Beovic",
-        ingreso:2018,
-        trabajos:[
-        {title:"Perro",imagen:"https://images.clarin.com/2019/01/19/BHaslG6vz_1256x620__1.jpg"},
-        {title:"Gato",imagen:"https://i.pinimg.com/originals/f3/bd/84/f3bd8497e15399201b634714ec5ed390.jpg"},
-        {title:"Conejo",imagen:"https://misanimales.com/wp-content/uploads/2018/07/conejo-enano-caracteristicas.jpg"}
+        {
+          nombre:"Alexa Beovic",
+          ingreso:2018,
+          trabajos:[
+          {titulo:"Perro",imagen:"https://images.clarin.com/2019/01/19/BHaslG6vz_1256x620__1.jpg"},
+          {titulo:"Gato",imagen:"https://i.pinimg.com/originals/f3/bd/84/f3bd8497e15399201b634714ec5ed390.jpg"},
+          {titulo:"Conejo",imagen:"https://misanimales.com/wp-content/uploads/2018/07/conejo-enano-caracteristicas.jpg"}
+        ]
+      }, {
+          nombre:"Francisca Kegevic",
+          ingreso:2017,
+          trabajos:[
+          {titulo:"silla",imagen:"https://home.ripley.cl/store/Attachment/WOP/D367/2000368847000/2000368847000_2.jpg"},
+          {titulo:"mesa",imagen:"https://home.ripley.cl/store/Attachment/WOP/D359/2000361041702/2000361041702_2.jpg"},
+          {titulo:"velador",imagen:"http://www.decorador.cl/wp-content/uploads/2017/11/Velador-Alanya-Bohemio-Chic2.jpg"}
         ]
       }
       ]
-      $("#cuestiones").append('<h2>'+ curso[0].nombre+'</h2').append('<h4>'+ curso[0].
-      ingreso+'</h4>').append('<img src="' + curso[0].trabajos[0].imagen +'">');
+
+        $.each(curso, function(i, integrante) {
+            $("#cuestiones").append("<h2>" + integrante.nombre + "</h2>");
+
+          $.each(integrante.trabajos, function(i, trabajo) {
+              $("#cuestiones").append("<h5>" + trabajo.titulo + "</h5>").append("<img src='" + trabajo.imagen + "'>");
+          });
+
+        });
+
     </script>
   </body>
 </html>
